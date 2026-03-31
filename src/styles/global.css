@@ -1,0 +1,42 @@
+/* Premium dashboard shell – smooth UX */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(13, 148, 136, 0.22);
+  color: inherit;
+}
+
+/* Shimmer loading (use with MUI Skeleton) */
+@keyframes mindbloom-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.mindbloom-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.06) 0%,
+    rgba(59, 130, 246, 0.08) 45%,
+    rgba(13, 148, 136, 0.1) 50%,
+    rgba(59, 130, 246, 0.08) 55%,
+    rgba(15, 23, 42, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: mindbloom-shimmer 1.35s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .mindbloom-shimmer {
+    animation: none;
+    background: rgba(15, 23, 42, 0.06);
+  }
+}
